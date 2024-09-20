@@ -1,0 +1,21 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: booklice/hugo_with_cms
+  branch: master
+
+media_folder: "static/assets" # Folder where user uploaded files should go
+public_folder: "assets"
+collections:
+  - name: "posts" # Used in routes, e.g., /admin/collections/post
+    label: "Posts" # Used in the UI
+    folder: "content/posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Media Files", name: "image", widget: "file" }
+      - { label: "Body", name: "body", widget: "markdown" }
+logo_url: https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/1200px-Tux.svg.png
+logo_link: https://github.com/booklice/hugo_with_cms
